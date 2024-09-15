@@ -1,0 +1,19 @@
+.button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 15px; /* Это добавит скругления */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.button:hover {
+  background-color: #cc0000;
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+}

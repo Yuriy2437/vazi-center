@@ -1,0 +1,69 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: slowZoom 20s infinite alternate;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.title {
+  font-size: 4rem;
+  color: #ff0000;
+  margin-bottom: 2rem;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.button {
+  animation: pulse 2s infinite;
+}
