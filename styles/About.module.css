@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.leftSection {
+  flex: 1;
+  padding: 2rem;
+  background-color: #4caf50;
+  color: white;
+}
+
+.rightSection {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.formSection {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutText {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.formSection form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formSection input,
+.formSection textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.formSection textarea {
+  resize: vertical;
+  overflow: auto;
+}
+
+.formSection button {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}

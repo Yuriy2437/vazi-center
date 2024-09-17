@@ -1,17 +1,22 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from '../../styles/Menu.module.css';
 
 const menuItems = [
-  'About us',
-  'English Club',
-  'Lectorium',
-  'Music Club',
-  'Psychology Club',
-  'Cafe-bar',
-  'Your feedback and suggestions',
+  { name: 'About us', path: '/about' },
+  { name: 'English Club', path: '/english-club' },
+  { name: 'Lectorium', path: '/lectorium' },
+  { name: 'Music Club', path: '/music-club' },
+  { name: 'Psychology Club', path: '/psychology-club' },
+  { name: 'Cafe-bar', path: '/cafe-bar' },
+  { name: 'Your feedback and suggestions', path: '/feedback' },
 ];
 
 export default function Menu() {
+  const router = useRouter();
+
   return (
     <div className={styles.container}>
       <div className={styles.leftSection}>
@@ -22,8 +27,9 @@ export default function Menu() {
               key={index}
               className={styles.menuItem}
               style={{ animationDelay: `${index * 0.1}s` }}
+              onClick={() => router.push(item.path)}
             >
-              {item}
+              {item.name}
             </li>
           ))}
         </ul>
