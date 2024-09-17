@@ -14,13 +14,11 @@
   flex: 2;
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 }
 
 .formSection {
-  flex: 1;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 .aboutText {
@@ -33,6 +31,10 @@
   flex-direction: column;
 }
 
+.nameInput {
+  width: 50%;
+}
+
 .formSection input,
 .formSection textarea {
   margin-bottom: 1rem;
@@ -41,7 +43,7 @@
 
 .formSection textarea {
   resize: vertical;
-  overflow: auto;
+  min-height: 100px;
 }
 
 .formSection button {
@@ -51,4 +53,37 @@
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.questionsList {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.questionsHeader {
+  display: flex;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.questionsHeader span {
+  flex: 1;
+}
+
+.questionsContent {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.questionItem {
+  display: flex;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.questionItem span {
+  flex: 1;
 }

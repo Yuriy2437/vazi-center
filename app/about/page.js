@@ -1,15 +1,50 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '../../styles/About.module.css';
 
 const AboutPage = () => {
   const [name, setName] = useState('');
   const [question, setQuestion] = useState('');
+  const [questions, setQuestions] = useState([]);
+
+  useEffect(() => {
+    fetchQuestions();
+  }, []);
+
+  const fetchQuestions = async () => {
+    try {
+      const response = await fetch('/api/questions');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setQuestions(data);
+    } catch (error) {
+      console.error('Error fetching questions:', error);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Здесь будет логика отправки данных в MongoDB
+    try {
+      const response = await fetch('/api/questions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, question }),
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      await response.json();
+      setName('');
+      setQuestion('');
+      fetchQuestions();
+    } catch (error) {
+      console.error('Error submitting question:', error);
+    }
   };
 
   return (
@@ -33,16 +68,33 @@ const AboutPage = () => {
               placeholder='Name'
               value={name}
               onChange={(e) => setName(e.target.value)}
-              maxLength={10}
+              maxLength={25}
+              className={styles.nameInput}
             />
             <textarea
               placeholder='Question'
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
-              maxLength={50}
+              maxLength={150}
             />
             <button type='submit'>Send</button>
           </form>
+        </div>
+        <div className={styles.questionsList}>
+          <h2>List of Questions</h2>
+          <div className={styles.questionsHeader}>
+            <span>Name</span>
+            <span>Question</span>
+          </div>
+          <div className={styles.questionsContent}>
+            {Array.isArray(questions) &&
+              questions.map((q, index) => (
+                <div key={index} className={styles.questionItem}>
+                  <span>{q.name}</span>
+                  <span>{q.question}</span>
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     </div>
