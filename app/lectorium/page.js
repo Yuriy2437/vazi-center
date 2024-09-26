@@ -5,27 +5,27 @@ import QuestionSection from '../../components/QuestionSection';
 import PhotoGallery from '../../components/PhotoGallery';
 import styles from '../../styles/CommonPage.module.css';
 
-const AboutPage = () => {
+const LectoriumPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
   const photos = [
-    '/images/photo_13.jpg',
-    '/images/photo_19.jpg',
-    '/images/photo_4.jpg',
+    '/images/photo_8.jpg',
+    '/images/photo_9.jpg',
+    '/images/photo_21.jpg',
   ];
 
   return (
     <div className={styles.pageContainer}>
       <div
         className={styles.leftSection}
-        style={{ '--left-section-bg-color': '#d331c3' }}
+        style={{ '--left-section-bg-color': '#1836e3' }}
       >
         <p className={styles.aboutText}>
-          Vazi Center is a multifunctional developing cultural space in Tbilisi.
-          Here you can watch a film, listen to a lecture, attend a musical
-          evening and even get a consultation from a professional psychologist.
-          If you come with children, you can leave them in the playroom, where
-          an adult will look after them. Those who wish can drink a cup of
-          delicious fresh coffee for free.
+          The Lectorium is a space in Vazi that hosts certified lecturers in
+          various disciplines such as philosophy, theology, history, political
+          science, other humanities and natural sciences. The lectures are
+          tailored to the needs of the audience and take place in a
+          discussion-oriented environment. The main goal of the lectures is the
+          intellectual development of the audience.
         </p>
         <div className={styles.buttonContainer}>
           <button
@@ -45,12 +45,12 @@ const AboutPage = () => {
       <div className={styles.rightSection}>
         {showPhoto && <PhotoGallery photos={photos} />}
         <QuestionSection
-          apiEndpoint='/api/about/questions'
-          title='Questions about Vazi Center'
+          apiEndpoint='/api/lectorium/questions'
+          title='Questions about Lectorium'
         />
       </div>
     </div>
   );
 };
 
-export default AboutPage;
+export default LectoriumPage;

@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  height: calc(100vh - 50px);
+}
+
+.leftSection {
+  flex: 1;
+  padding: 1rem;
+  background-color: #fff9c4;
+  overflow-y: auto;
+}
+
+.rightSection {
+  flex: 2;
+  padding: 1rem;
+  background-color: #80cbc4;
+  overflow-y: auto;
+}
+
+.filterInput {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.questionsHeader,
+.filteredHeader {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.filteredHeader {
+  grid-template-columns: 1fr 2fr;
+}
+
+.questionItem {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+.filteredQuestions .questionItem {
+  grid-template-columns: 1fr 2fr;
+}
+
+.deleteButton {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+  background-color: #cc0000;
+}
+
+.highlight {
+  background-color: pink;
+}

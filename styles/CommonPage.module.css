@@ -1,0 +1,128 @@
+.pageContainer {
+  height: calc(100vh - 50px);
+  display: flex;
+  overflow-y: auto;
+}
+
+.leftSection {
+  display: flex;
+  flex: 1;
+  padding: 0.7rem 2rem 2rem 2rem;
+  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  max-height: calc(100vh - 50px);
+  background-color: var(--left-section-bg-color);
+}
+
+.aboutText {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  overflow: hidden;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.rightSection {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: hidden;
+  position: relative;
+}
+
+/* Новые стили для заголовков */
+.askQuestionSection h2,
+.questionsList h2 {
+  margin-top: 0;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.photoButton {
+  padding: 0.5rem 1rem;
+  background-color: #df0b0b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.photoButton:hover {
+  background-color: #ff3333;
+}
+
+.photoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.photoOverlay img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.arrowButton:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.arrowButton:first-child {
+  left: 20px;
+}
+
+.arrowButton:last-child {
+  right: 20px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .questionsHeader span,
+  .questionItem span {
+    flex: 1;
+  }
+}
+
+/* Десктопная версия */
+@media (min-width: 769px) {
+  .questionsHeader span:nth-child(1),
+  .questionsHeader span:nth-child(2),
+  .questionItem span:nth-child(1),
+  .questionItem span:nth-child(2) {
+    flex: 1;
+  }
+
+  .questionsHeader span:nth-child(3),
+  .questionItem span:nth-child(3) {
+    flex: 2;
+  }
+}

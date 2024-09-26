@@ -1,0 +1,65 @@
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.photoButton {
+  padding: 0.5rem 1rem;
+  background-color: #df0b0b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.photoButton:hover {
+  background-color: #ff3333;
+}
+
+.photoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.photoContainer {
+  position: relative;
+  width: 80%;
+  height: 80%;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 11;
+}
+
+.arrowButton:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.leftArrow {
+  left: 20px;
+}
+
+.rightArrow {
+  right: 20px;
+}

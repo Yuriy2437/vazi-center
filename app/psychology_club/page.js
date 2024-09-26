@@ -5,27 +5,27 @@ import QuestionSection from '../../components/QuestionSection';
 import PhotoGallery from '../../components/PhotoGallery';
 import styles from '../../styles/CommonPage.module.css';
 
-const AboutPage = () => {
+const PsychologyClubPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
   const photos = [
-    '/images/photo_13.jpg',
-    '/images/photo_19.jpg',
-    '/images/photo_4.jpg',
+    '/images/photo_10.jpg',
+    '/images/photo_22.jpg',
+    '/images/photo_20.jpg',
   ];
 
   return (
     <div className={styles.pageContainer}>
       <div
         className={styles.leftSection}
-        style={{ '--left-section-bg-color': '#d331c3' }}
+        style={{ '--left-section-bg-color': '#790c5e' }}
       >
         <p className={styles.aboutText}>
-          Vazi Center is a multifunctional developing cultural space in Tbilisi.
-          Here you can watch a film, listen to a lecture, attend a musical
-          evening and even get a consultation from a professional psychologist.
-          If you come with children, you can leave them in the playroom, where
-          an adult will look after them. Those who wish can drink a cup of
-          delicious fresh coffee for free.
+          The Psychology Club is a space in Vazi where you can listen to
+          lectures by certified psychologists. But its main goal is to conduct
+          personal and group psychological consultations and trainings.
+          Psychologists will help you cope with depression, give qualified
+          advice on your family problems, finding the meaning and goals of your
+          life.
         </p>
         <div className={styles.buttonContainer}>
           <button
@@ -45,12 +45,12 @@ const AboutPage = () => {
       <div className={styles.rightSection}>
         {showPhoto && <PhotoGallery photos={photos} />}
         <QuestionSection
-          apiEndpoint='/api/about/questions'
-          title='Questions about Vazi Center'
+          apiEndpoint='/api/psychology_club/questions'
+          title='Questions about Psychology Club'
         />
       </div>
     </div>
   );
 };
 
-export default AboutPage;
+export default PsychologyClubPage;

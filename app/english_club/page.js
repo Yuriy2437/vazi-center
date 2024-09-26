@@ -5,27 +5,27 @@ import QuestionSection from '../../components/QuestionSection';
 import PhotoGallery from '../../components/PhotoGallery';
 import styles from '../../styles/CommonPage.module.css';
 
-const AboutPage = () => {
+const EnglishClubPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
   const photos = [
-    '/images/photo_13.jpg',
-    '/images/photo_19.jpg',
-    '/images/photo_4.jpg',
+    '/images/photo_15.jpg',
+    '/images/photo_17.jpg',
+    '/images/photo_18.jpg',
   ];
 
   return (
     <div className={styles.pageContainer}>
       <div
         className={styles.leftSection}
-        style={{ '--left-section-bg-color': '#d331c3' }}
+        style={{ '--left-section-bg-color': '#4CAF50' }}
       >
         <p className={styles.aboutText}>
-          Vazi Center is a multifunctional developing cultural space in Tbilisi.
-          Here you can watch a film, listen to a lecture, attend a musical
-          evening and even get a consultation from a professional psychologist.
-          If you come with children, you can leave them in the playroom, where
-          an adult will look after them. Those who wish can drink a cup of
-          delicious fresh coffee for free.
+          The English Club is a space in Vazi where you can improve your English
+          skills under the guidance of experienced teachers. Among them are both
+          native speakers and bilinguals. In a cozy atmosphere, over a cup of
+          coffee, we conduct 1.5-hour classes, studying grammar and vocabulary
+          of the language. We converse in English, and also watch and discuss
+          films in English.
         </p>
         <div className={styles.buttonContainer}>
           <button
@@ -45,12 +45,12 @@ const AboutPage = () => {
       <div className={styles.rightSection}>
         {showPhoto && <PhotoGallery photos={photos} />}
         <QuestionSection
-          apiEndpoint='/api/about/questions'
-          title='Questions about Vazi Center'
+          apiEndpoint='/api/english_club/questions'
+          title='Questions about English Club'
         />
       </div>
     </div>
   );
 };
 
-export default AboutPage;
+export default EnglishClubPage;

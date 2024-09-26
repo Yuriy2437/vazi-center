@@ -5,27 +5,27 @@ import QuestionSection from '../../components/QuestionSection';
 import PhotoGallery from '../../components/PhotoGallery';
 import styles from '../../styles/CommonPage.module.css';
 
-const AboutPage = () => {
+const KidsClubPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
   const photos = [
-    '/images/photo_13.jpg',
-    '/images/photo_19.jpg',
-    '/images/photo_4.jpg',
+    '/images/photo_2.jpg',
+    '/images/photo_7.jpg',
+    '/images/photo_23.jpg',
   ];
 
   return (
     <div className={styles.pageContainer}>
       <div
         className={styles.leftSection}
-        style={{ '--left-section-bg-color': '#d331c3' }}
+        style={{ '--left-section-bg-color': '#794a0c' }}
       >
         <p className={styles.aboutText}>
-          Vazi Center is a multifunctional developing cultural space in Tbilisi.
-          Here you can watch a film, listen to a lecture, attend a musical
-          evening and even get a consultation from a professional psychologist.
-          If you come with children, you can leave them in the playroom, where
-          an adult will look after them. Those who wish can drink a cup of
-          delicious fresh coffee for free.
+          The Kids Club is a space in Vazi that has two purposes. Firstly,
+          during the event you can leave your child in the children's room,
+          where a responsible adult will watch over him. Secondly, we have
+          special programs for psychological correction of the child's behavior
+          or speech therapy correction of his speech. In the second case,
+          certified specialists work.
         </p>
         <div className={styles.buttonContainer}>
           <button
@@ -45,12 +45,12 @@ const AboutPage = () => {
       <div className={styles.rightSection}>
         {showPhoto && <PhotoGallery photos={photos} />}
         <QuestionSection
-          apiEndpoint='/api/about/questions'
-          title='Questions about Vazi Center'
+          apiEndpoint='/api/kids_club/questions'
+          title='Questions about Kids Club'
         />
       </div>
     </div>
   );
 };
 
-export default AboutPage;
+export default KidsClubPage;

@@ -6,11 +6,11 @@ import styles from '../../styles/Menu.module.css';
 
 const menuItems = [
   { name: 'About us', path: '/about' },
-  { name: 'English Club', path: '/english-club' },
+  { name: 'English Club', path: '/english_club' },
   { name: 'Lectorium', path: '/lectorium' },
-  { name: 'Music Club', path: '/music-club' },
-  { name: 'Psychology Club', path: '/psychology-club' },
-  { name: 'Cafe-bar', path: '/cafe-bar' },
+  { name: 'Music Club', path: '/music_club' },
+  { name: 'Psychology Club', path: '/psychology_club' },
+  { name: 'Kids room', path: '/kids_room' },
   { name: 'Your feedback and suggestions', path: '/feedback' },
 ];
 
