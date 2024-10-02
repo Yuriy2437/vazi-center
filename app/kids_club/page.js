@@ -21,11 +21,11 @@ const KidsClubPage = () => {
       >
         <p className={styles.aboutText}>
           The Kids Club is a space in Vazi that has two purposes. Firstly,
-          during the event you can leave your child in the children's room,
-          where a responsible adult will watch over him. Secondly, we have
-          special programs for psychological correction of the child's behavior
-          or speech therapy correction of his speech. In the second case,
-          certified specialists work.
+          during the event you can leave your child in the children room, where
+          a responsible adult will watch over him. Secondly, we have special
+          programs for psychological correction of the child behavior or speech
+          therapy correction of his speech. In the second case, certified
+          specialists work.
         </p>
         <div className={styles.buttonContainer}>
           <button
