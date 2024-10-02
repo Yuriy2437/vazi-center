@@ -20,12 +20,14 @@ const EnglishClubPage = () => {
         style={{ '--left-section-bg-color': '#4CAF50' }}
       >
         <p className={styles.aboutText}>
-          The English Club is a space in Vazi where you can improve your English
-          skills under the guidance of experienced teachers. Among them are both
-          native speakers and bilinguals. In a cozy atmosphere, over a cup of
-          coffee, we conduct 1.5-hour classes, studying grammar and vocabulary
-          of the language. We converse in English, and also watch and discuss
-          films in English.
+          The Vazi English Club is happy to help you brush up on your English
+          skills and take it to the level you’ve always dreamed of - all under
+          the guidance of experienced teachers. Among them are both native
+          speakers and bilinguals. In a cozy atmosphere, over a cup of coffee,
+          we conduct 1.5-hour classes on a whole variety of language-related
+          topics and subjects - from Grammar to Phrasal verbs, from the
+          Conditionals to Sequence of Tenses, from the Passive voice to Reported
+          speech, from speaking to analyzing songs and movies.
         </p>
         <div className={styles.buttonContainer}>
           <button

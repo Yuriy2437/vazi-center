@@ -20,12 +20,12 @@ const AboutPage = () => {
         style={{ '--left-section-bg-color': '#d331c3' }}
       >
         <p className={styles.aboutText}>
-          Vazi Center is a multifunctional developing cultural space in Tbilisi.
-          Here you can watch a film, listen to a lecture, attend a musical
-          evening and even get a consultation from a professional psychologist.
-          If you come with children, you can leave them in the playroom, where
-          an adult will look after them. Those who wish can drink a cup of
-          delicious fresh coffee for free.
+          The Vazi Center is a multi-functional developing cultural space in
+          Tbilisi. Here you can watch movies, hear lectures, attend cultural and
+          music events, and even get a consultation by a professional
+          psychologist. If you have children, we have a playroom carefully
+          watched by an adult. You are also welcome to enjoy a complementary cup
+          of coffee or tea while here.
         </p>
         <div className={styles.buttonContainer}>
           <button

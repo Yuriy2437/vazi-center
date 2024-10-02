@@ -20,12 +20,11 @@ const KidsClubPage = () => {
         style={{ '--left-section-bg-color': '#794a0c' }}
       >
         <p className={styles.aboutText}>
-          The Kids Club is a space in Vazi that has two purposes. Firstly,
-          during the event you can leave your child in the children room, where
-          a responsible adult will watch over him. Secondly, we have special
-          programs for psychological correction of the child behavior or speech
-          therapy correction of his speech. In the second case, certified
-          specialists work.
+          The Vazi Kids Club serves two key purposes. First, during events, you
+          can leave your child in the care of a responsible adult in the
+          children room. Second, we offer specialized programs for behavioral
+          therapy or speech therapy, where certified professionals work with
+          your child to support their development.
         </p>
         <div className={styles.buttonContainer}>
           <button

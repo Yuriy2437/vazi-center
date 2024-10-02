@@ -20,12 +20,12 @@ const PsychologyClubPage = () => {
         style={{ '--left-section-bg-color': '#790c5e' }}
       >
         <p className={styles.aboutText}>
-          The Psychology Club is a space in Vazi where you can listen to
-          lectures by certified psychologists. But its main goal is to conduct
-          personal and group psychological consultations and trainings.
-          Psychologists will help you cope with depression, give qualified
-          advice on your family problems, finding the meaning and goals of your
-          life.
+          The Psychology Club at Vazi offers a space where certified
+          psychologists deliver insightful lectures. However, its primary focus
+          is on providing personal and group psychological consultations and
+          training sessions. The psychologists are available to help you manage
+          depression, offer expert guidance on family-related issues, and assist
+          in finding meaning and setting goals in life.
         </p>
         <div className={styles.buttonContainer}>
           <button

@@ -20,12 +20,14 @@ const LectoriumPage = () => {
         style={{ '--left-section-bg-color': '#1836e3' }}
       >
         <p className={styles.aboutText}>
-          The Lectorium is a space in Vazi that hosts certified lecturers in
-          various disciplines such as philosophy, theology, history, political
-          science, other humanities and natural sciences. The lectures are
-          tailored to the needs of the audience and take place in a
-          discussion-oriented environment. The main goal of the lectures is the
-          intellectual development of the audience.
+          The Lecture Hall (or the Educational Center) at Vazi is another key
+          attraction, hosting certified lecturers across a wide range of
+          disciplines, including philosophy, theology, history, political
+          science, the humanities, family relationships, and natural sciences.
+          Each lecture is tailored to meet the specific needs of the audience,
+          fostering a discussion-oriented environment. The primary goal of these
+          sessions is to promote the intellectual growth and development of
+          participants.
         </p>
         <div className={styles.buttonContainer}>
           <button

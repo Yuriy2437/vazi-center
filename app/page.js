@@ -10,10 +10,6 @@ export default function Home() {
         alt='Background'
         fill
         className={styles.backgroundImage}
-        // style={{
-        //   objectFit: 'cover',
-        //   objectPosition: 'center',
-        // }}
         priority
       />
       <div className={styles.content}>
