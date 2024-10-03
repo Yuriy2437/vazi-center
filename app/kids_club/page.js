@@ -1,17 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import QuestionSection from '../../components/QuestionSection';
+// import { useSearchParams } from 'next/navigation';
 import PhotoGallery from '../../components/PhotoGallery';
 import styles from '../../styles/CommonPage.module.css';
 
 const KidsClubPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  // const searchParams = useSearchParams();
   const photos = [
     '/images/photo_2.jpg',
     '/images/photo_7.jpg',
     '/images/photo_23.jpg',
   ];
+
+  useEffect(() => {
+    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
+  }, []);
 
   return (
     <div className={styles.pageContainer}>
@@ -37,7 +44,7 @@ const KidsClubPage = () => {
             onClick={() => setShowPhoto(false)}
             className={styles.photoButton}
           >
-            Remove Photo
+            Close Photo
           </button>
         </div>
       </div>
@@ -46,6 +53,7 @@ const KidsClubPage = () => {
         <QuestionSection
           apiEndpoint='/api/kids_club/questions'
           title='Questions about Kids Club'
+          isAdmin={isAdmin}
         />
       </div>
     </div>

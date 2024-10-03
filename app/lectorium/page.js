@@ -1,17 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+// import { useSearchParams } from 'next/navigation';
 import QuestionSection from '../../components/QuestionSection';
 import PhotoGallery from '../../components/PhotoGallery';
 import styles from '../../styles/CommonPage.module.css';
 
 const LectoriumPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  // const searchParams = useSearchParams();
   const photos = [
     '/images/photo_8.jpg',
     '/images/photo_9.jpg',
     '/images/photo_21.jpg',
   ];
+
+  useEffect(() => {
+    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
+  }, []);
 
   return (
     <div className={styles.pageContainer}>
@@ -40,7 +47,7 @@ const LectoriumPage = () => {
             onClick={() => setShowPhoto(false)}
             className={styles.photoButton}
           >
-            Remove Photo
+            Close Photo
           </button>
         </div>
       </div>
@@ -49,6 +56,7 @@ const LectoriumPage = () => {
         <QuestionSection
           apiEndpoint='/api/lectorium/questions'
           title='Questions about Lectorium'
+          isAdmin={isAdmin}
         />
       </div>
     </div>

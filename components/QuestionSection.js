@@ -2,7 +2,7 @@
 import useQuestions from '../hooks/useQuestions';
 import styles from '../styles/QuestionSection.module.css';
 
-const QuestionSection = ({ apiEndpoint, title }) => {
+const QuestionSection = ({ apiEndpoint, title, isAdmin }) => {
   const {
     name,
     setName,
@@ -52,12 +52,14 @@ const QuestionSection = ({ apiEndpoint, title }) => {
             <div key={q._id} className={styles.questionItem}>
               <span>{q.name}</span>
               <span>{q.question}</span>
-              <button
-                onClick={() => handleDelete(q._id)}
-                className={styles.deleteButton}
-              >
-                Delete
-              </button>
+              {isAdmin && (
+                <button
+                  onClick={() => handleDelete(q._id)}
+                  className={styles.deleteButton}
+                >
+                  Delete
+                </button>
+              )}
             </div>
           ))}
         </div>

@@ -1,17 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+// import { useSearchParams } from 'next/navigation';
 import QuestionSection from '../../components/QuestionSection';
 import PhotoGallery from '../../components/PhotoGallery';
 import styles from '../../styles/CommonPage.module.css';
 
 const PsychologyClubPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  // const searchParams = useSearchParams();
   const photos = [
     '/images/photo_10.jpg',
     '/images/photo_22.jpg',
     '/images/photo_20.jpg',
   ];
+
+  useEffect(() => {
+    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
+  }, []);
 
   return (
     <div className={styles.pageContainer}>
@@ -38,7 +45,7 @@ const PsychologyClubPage = () => {
             onClick={() => setShowPhoto(false)}
             className={styles.photoButton}
           >
-            Remove Photo
+            Close Photo
           </button>
         </div>
       </div>
@@ -47,6 +54,7 @@ const PsychologyClubPage = () => {
         <QuestionSection
           apiEndpoint='/api/psychology_club/questions'
           title='Questions about Psychology Club'
+          isAdmin={isAdmin}
         />
       </div>
     </div>

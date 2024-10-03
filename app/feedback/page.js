@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useSearchParams } from 'next/navigation';
 import {
   setQuestions,
   setFilteredQuestions,
@@ -14,9 +15,13 @@ export default function FeedbackPage() {
   const { questions, filteredQuestions, filter } = useSelector(
     (state) => state.feedback
   );
+  const [isAdmin, setIsAdmin] = useState(false);
+  // const searchParams = useSearchParams();
   const [showFilteredHeaders, setShowFilteredHeaders] = useState(false);
 
   useEffect(() => {
+    // setIsAdmin(searchParams.get('admin') === 'true');
+    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
     const fetchQuestions = async () => {
       try {
         const collections = [
@@ -51,7 +56,7 @@ export default function FeedbackPage() {
       const newFilter = e.target.value.toLowerCase();
       dispatch(setFilter(newFilter));
       const filtered = questions.filter((q) =>
-        q.question.toLowerCase().includes(newFilter)
+        q.question.toLowerCase().includes(newFilter.toLowerCase())
       );
       dispatch(setFilteredQuestions(filtered));
       setShowFilteredHeaders(filtered.length > 0);
@@ -60,6 +65,7 @@ export default function FeedbackPage() {
   };
 
   const handleDelete = async (id, base) => {
+    if (!isAdmin) return; // Предотвращаем удаление для не-админов
     try {
       const response = await fetch(`/api/${base}/questions/${id}`, {
         method: 'DELETE',
@@ -126,12 +132,14 @@ export default function FeedbackPage() {
             <div key={q._id} className={styles.questionItem}>
               <span>{q.base}</span>
               <span>{q.question}</span>
-              <button
-                onClick={() => handleDelete(q._id, q.base)}
-                className={styles.deleteButton}
-              >
-                Delete
-              </button>
+              {isAdmin && (
+                <button
+                  onClick={() => handleDelete(q._id, q.base)}
+                  className={styles.deleteButton}
+                >
+                  Delete
+                </button>
+              )}
             </div>
           ))}
         </div>
