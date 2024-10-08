@@ -11,7 +11,7 @@ const menuItems = [
   { name: 'Music Club', path: '/music_club' },
   { name: 'Psychology Club', path: '/psychology_club' },
   { name: 'Kids room', path: '/kids_room' },
-  { name: 'Your feedback and suggestions', path: '/feedback' },
+  { name: 'All feedbacks', path: '/feedback' },
 ];
 
 export default function Menu() {

@@ -27,8 +27,8 @@ const PhotoGallery = ({ photos }) => {
         <Image
           src={photos[currentPhotoIndex]}
           alt='Gallery Photo'
-          layout='fill'
-          objectFit='contain'
+          fill
+          style={{ objectFit: 'contain', objectPosition: 'top' }}
         />
       </div>
       <button

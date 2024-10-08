@@ -24,7 +24,10 @@ const MainMenu = () => {
           <Link href='/kids_club'>Kids Club</Link>
         </li>
         <li>
-          <Link href='/feedback'>Your feedback and suggestions</Link>
+          <Link href='/feedback'>All feedbacks</Link>
+        </li>
+        <li>
+          <Link href='/'>Home</Link>
         </li>
       </ul>
     </nav>

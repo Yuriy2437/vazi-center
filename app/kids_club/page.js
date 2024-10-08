@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import QuestionSection from '../../components/QuestionSection';
-// import { useSearchParams } from 'next/navigation';
 import PhotoGallery from '../../components/PhotoGallery';
 import styles from '../../styles/CommonPage.module.css';
 
 const KidsClubPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  // const searchParams = useSearchParams();
+
   const photos = [
     '/images/photo_2.jpg',
     '/images/photo_7.jpg',
@@ -24,7 +23,7 @@ const KidsClubPage = () => {
     <div className={styles.pageContainer}>
       <div
         className={styles.leftSection}
-        style={{ '--left-section-bg-color': '#794a0c' }}
+        style={{ '--left-section-bg-color': 'pink' }}
       >
         <p className={styles.aboutText}>
           The Vazi Kids Club serves two key purposes. First, during events, you

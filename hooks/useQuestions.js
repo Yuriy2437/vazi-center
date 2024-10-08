@@ -1,8 +1,8 @@
-// hooks/useQuestions.js
 import { useState, useEffect } from 'react';
 
 const useQuestions = (apiEndpoint) => {
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [question, setQuestion] = useState('');
   const [questions, setQuestions] = useState([]);
 
@@ -31,13 +31,14 @@ const useQuestions = (apiEndpoint) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, question }),
+        body: JSON.stringify({ name, email, question }),
       });
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       await response.json();
       setName('');
+      setEmail('');
       setQuestion('');
       fetchQuestions();
     } catch (error) {
@@ -59,14 +60,21 @@ const useQuestions = (apiEndpoint) => {
     }
   };
 
+  const handleAnswer = (email) => {
+    window.location.href = `mailto:${email}`;
+  };
+
   return {
     name,
     setName,
+    email,
+    setEmail,
     question,
     setQuestion,
     questions,
     handleSubmit,
     handleDelete,
+    handleAnswer,
   };
 };
 

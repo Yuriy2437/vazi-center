@@ -16,11 +16,9 @@ export default function FeedbackPage() {
     (state) => state.feedback
   );
   const [isAdmin, setIsAdmin] = useState(false);
-  // const searchParams = useSearchParams();
   const [showFilteredHeaders, setShowFilteredHeaders] = useState(false);
 
   useEffect(() => {
-    // setIsAdmin(searchParams.get('admin') === 'true');
     setIsAdmin(localStorage.getItem('isAdmin') === 'true');
     const fetchQuestions = async () => {
       try {
@@ -65,7 +63,7 @@ export default function FeedbackPage() {
   };
 
   const handleDelete = async (id, base) => {
-    if (!isAdmin) return; // Предотвращаем удаление для не-админов
+    if (!isAdmin) return;
     try {
       const response = await fetch(`/api/${base}/questions/${id}`, {
         method: 'DELETE',

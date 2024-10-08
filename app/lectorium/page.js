@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-// import { useSearchParams } from 'next/navigation';
 import QuestionSection from '../../components/QuestionSection';
 import PhotoGallery from '../../components/PhotoGallery';
 import styles from '../../styles/CommonPage.module.css';
@@ -9,7 +8,7 @@ import styles from '../../styles/CommonPage.module.css';
 const LectoriumPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  // const searchParams = useSearchParams();
+
   const photos = [
     '/images/photo_8.jpg',
     '/images/photo_9.jpg',

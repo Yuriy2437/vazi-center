@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import QuestionSection from '../../components/QuestionSection';
-// import { useSearchParams } from 'next/navigation';
 import PhotoGallery from '../../components/PhotoGallery';
 import styles from '../../styles/CommonPage.module.css';
 
 const EnglishClubPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  // const searchParams = useSearchParams();
+
   const photos = [
     '/images/photo_15.jpg',
     '/images/photo_17.jpg',
