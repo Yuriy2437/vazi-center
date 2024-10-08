@@ -1,13 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import QuestionSection from '../../components/QuestionSection';
 import PhotoGallery from '../../components/PhotoGallery';
+import PageLayout from '../../components/PageLayout';
+import PhotoButtons from '../../components/PhotoButtons';
+import { useAdminStatus } from '../../hooks/useAdminStatus';
 import styles from '../../styles/CommonPage.module.css';
 
 const AboutPage = () => {
   const [showPhoto, setShowPhoto] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const isAdmin = useAdminStatus();
 
   const photos = [
     '/images/photo_13.jpg',
@@ -15,48 +18,37 @@ const AboutPage = () => {
     '/images/photo_4.jpg',
   ];
 
-  useEffect(() => {
-    setIsAdmin(localStorage.getItem('isAdmin') === 'true');
-  }, []);
+  const leftContent = (
+    <>
+      <p className={styles.aboutText}>
+        The Vazi Center is a multi-functional developing cultural space in
+        Tbilisi. Here you can watch movies, hear lectures, attend cultural and
+        music events, and even get a consultation by a professional
+        psychologist. If you have children, we have a playroom carefully watched
+        by an adult. You are also welcome to enjoy a complementary cup of coffee
+        or tea while here.
+      </p>
+      <PhotoButtons setShowPhoto={setShowPhoto} />
+    </>
+  );
+
+  const rightContent = (
+    <>
+      {showPhoto && <PhotoGallery photos={photos} />}
+      <QuestionSection
+        apiEndpoint='/api/about/questions'
+        title='Questions about Vazi Center'
+        isAdmin={isAdmin}
+      />
+    </>
+  );
 
   return (
-    <div className={styles.pageContainer}>
-      <div
-        className={styles.leftSection}
-        style={{ '--left-section-bg-color': '#d331c3' }}
-      >
-        <p className={styles.aboutText}>
-          The Vazi Center is a multi-functional developing cultural space in
-          Tbilisi. Here you can watch movies, hear lectures, attend cultural and
-          music events, and even get a consultation by a professional
-          psychologist. If you have children, we have a playroom carefully
-          watched by an adult. You are also welcome to enjoy a complementary cup
-          of coffee or tea while here.
-        </p>
-        <div className={styles.buttonContainer}>
-          <button
-            onClick={() => setShowPhoto(true)}
-            className={styles.photoButton}
-          >
-            Show Photo
-          </button>
-          <button
-            onClick={() => setShowPhoto(false)}
-            className={styles.photoButton}
-          >
-            Close Photo
-          </button>
-        </div>
-      </div>
-      <div className={styles.rightSection}>
-        {showPhoto && <PhotoGallery photos={photos} />}
-        <QuestionSection
-          apiEndpoint='/api/about/questions'
-          title='Questions about Vazi Center'
-          isAdmin={isAdmin}
-        />
-      </div>
-    </div>
+    <PageLayout
+      leftContent={leftContent}
+      rightContent={rightContent}
+      backgroundColor='#d331c3'
+    />
   );
 };
 

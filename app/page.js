@@ -11,7 +11,7 @@ export default function Home() {
   const router = useRouter();
 
   const handleAdminLogin = () => {
-    if (login === 'Yuriy2437' && password === 'Luther13579246!') {
+    if (login === 'Yuriy Bespechanskiy' && password === 'Luther13579246!') {
       localStorage.setItem('isAdmin', 'true');
       router.push('/menu?admin=true');
     } else {
